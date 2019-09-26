@@ -1,0 +1,7 @@
+{
+  "name": "RAndDApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

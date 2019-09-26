@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center color="success">
+      R&D List Items
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- List of Text Items -->
+  <ion-list *ngFor="let item of items">
+    <ion-item [routerLink]="[item.path]">
+      <ion-label>
+        {{item.title}}
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

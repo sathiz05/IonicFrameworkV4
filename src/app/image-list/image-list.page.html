@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <span class="w3-xxlarge ion-padding-horizontal" style="color:black" (click)="close()">x</span>
+    </ion-buttons>
+    <ion-title text-center color="success" class="w3-large">
+      List of images
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>File Upload</h1>
+  <span>upload</span>
+  <input type="file" name="kycImage" (change)="onFileSelected($event)">
+  <button type="button" (click)="onUpload()">Submit</button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of items">
+        <img [src]="'data:image/jpg;base64,'+item.image" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

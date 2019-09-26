@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="return-left" color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center color="success">
+      Navigation Types
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item [routerLink]="['/home']">
+    <ion-label>
+      Navigate using router link attribute
+    </ion-label>
+    <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+  </ion-item>
+  <ion-list *ngFor="let listItem of listArr;index as i">
+    <ion-item (click)="navigationFn(listItem,i+1)">
+      <ion-label>
+        {{listItem.title}}
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

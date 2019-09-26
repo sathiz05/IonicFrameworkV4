@@ -1,0 +1,15 @@
+.rowTitle{
+    background-color : #d7d8da;
+}
+.rowContent{
+    background-color : #f5f6f9;
+}
+
+ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0px;
+    background: transparent;
+    ion-row{
+        width: 100%;
+    }
+}

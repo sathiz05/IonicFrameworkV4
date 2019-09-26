@@ -1,0 +1,106 @@
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  
+    ion-card {
+      display: inline-block;
+      height: 100px;
+      width:100px;
+      border: 1px solid lightblue;
+      margin: 10px;
+    }
+  }
+
+  .box{
+    height: 100px;
+    background-color:gray; 
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    .card-a{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:red;
+    }
+    .card-b{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:blue;
+    }
+    .card-c{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:green;
+    }
+    .card-d{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:red;
+    }
+    .card-e{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:blue;
+    }
+    .card-f{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:green;
+    }
+    .card-g{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:red;
+    }
+    .card-h{
+      display: inline-block;
+      height: 100%;
+      width: 100px;
+      background-color:blue;
+    }
+    .card-i{
+      display: inline-block;  
+      height: 100%;
+      width: 100px;
+      background-color:green;
+    }
+   
+  }
+
+  #myFixZone {
+    height: 200px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    ::-webkit-scrollbar{
+      display: none;
+    }
+    ion-card{
+      display: inline-block;
+    }
+}
+
+.infinite{
+  height: 100px;
+  white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    ::-webkit-scrollbar{
+      display: none;
+    }
+  
+    ion-item{
+      display: inline-block;
+    }
+ 
+}
+

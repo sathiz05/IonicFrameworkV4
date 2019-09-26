@@ -1,0 +1,41 @@
+<ion-content padding>
+  <div class="w3-disaply-container w3-center w3-content w3-card-4 w3-round-large w3-padding-64 w3-text-white bg"
+    style="width:90%;height:100%;max-width:490px">
+    <!-- <ion-label text-center><ion-icon name="logo-ionic" style="font-size: 120px;" justify-content-center></ion-icon></ion-label> -->
+    <div class=" w3-display-middle">
+      <div class="w3-container">
+        <h2 class="w3-xlarge " style="text-shadow:1px 1px 0 #444">
+          <b>WELCOME</b>
+        </h2>
+      </div>
+      <!-- <ion-icon name="logo-ionic"></ion-icon> -->
+      <img src="assets/imgs/img_avatar2.png" class="w3-circle" style="width:85px">
+      <!-- <ion-input class="w3-border"></ion-input> -->
+      <div class="w3-container" style="width:100%">
+        <p>
+          <label class="w3-left w3-large">
+            User Name
+          </label>
+          <ion-input class="w3-border w3-round-large" type="text" [(ngModel)]="uName"></ion-input>
+        </p>
+        <p>
+          <label class=" w3-left w3-large">
+            Password
+          </label>
+          <ion-input type="password" class="w3-border w3-round-large" type="password" [(ngModel)]="uPsw"></ion-input>
+          <span class=" w3-right w3-hover-text-black w3-padding">Forgot Password?</span>
+        </p>
+
+        <div class="w3-clear"></div>
+        <button class="w3-btn w3-border w3-border-white w3-round-large  w3-large" (click)="loginFn()">Login</button>
+
+      </div>
+
+    </div>
+    <div class="w3-container w3-display-bottommiddle w3-margin-bottom">
+      <span>Or Sing Up Using</span>
+      <br>
+      <span class="w3-hover-text-black" (click)="signupFn()">SIGN UP</span>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="return-left" color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center color="success" class="w3-large w3-center">
+      User Detail
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" fill="outline" (click)="closeModal()">Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" formControlName="firstName"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="w3-small"
+        *ngIf="userForm.get('firstName').hasError('required') && userForm.get('firstName').touched">
+        <div class="error" *ngIf="userForm.get('firstName').hasError('required') && userForm.get('firstName').touched">
+          Enter First Name.
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text" formControlName="lastName"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="w3-small"
+        *ngIf="userForm.get('lastName').hasError('required') && userForm.get('lastName').touched">
+        <div class="error" *ngIf="userForm.get('lastName').hasError('required') && userForm.get('lastName').touched">
+          Enter Last Name.
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="w3-small"
+        *ngIf="(userForm.get('email').hasError('required') || userForm.get('email').hasError('pattern') ) && userForm.get('email').touched">
+        <div class="error" *ngIf="userForm.get('email').hasError('required') && userForm.get('email').touched">
+          Enter Email.
+        </div>
+        <div class="error" *ngIf="userForm.get('email').hasError('pattern') && userForm.get('email').touched">
+          Enter Valid Email.
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Mobile No</ion-label>
+        <ion-input type="tel" formControlName="mobileNo"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="w3-small"
+        *ngIf="userForm.get('mobileNo').hasError('required') && userForm.get('mobileNo').touched">
+        <div class="error" *ngIf="userForm.get('mobileNo').hasError('required') && userForm.get('mobileNo').touched">
+          Enter Last Name.
+        </div>
+      </ion-item>
+      <ion-button expand="full" shape="round" fill="outline" class="ion-margin-vertical"
+        [disabled]="userForm.invalid" type="submit">Submit</ion-button>
+    </form>
+  </ion-list>
+</ion-content>

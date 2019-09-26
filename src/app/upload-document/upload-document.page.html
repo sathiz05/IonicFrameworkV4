@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="return-left" color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center color="success" class="w3-large">
+      Upload document
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="w3-card ion-padding" class="w3-content" style="max-width:500px">
+    <ion-item>
+      <ion-label position="floating">Select Document name</ion-label>
+      <ion-select interface="action-sheet" [(ngModel)]="doc_code">
+        <ion-select-option *ngFor="let doc of docs" [value]='doc.code'>{{doc.name}} </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Document Number</ion-label>
+      <ion-input type="text" [(ngModel)]="doc_number"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" shape="round" fill="outline" class="ion-margin-vertical" (click)="captureDocInfo()">
+            Save
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" shape="round" fill="outline" class="ion-margin-vertical" (click)="clearInfo()">
+            Clear
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
+
+  <ion-grid class="w3-card ion-padding-horizontal rowTitle ">
+    <ion-row class="ion-no-padding ion-no-margin w3-small w3-bold w3-center" color="light">
+      <ion-col>SNO.</ion-col>
+      <ion-col>NAME</ion-col>
+      <ion-col>NUMBER</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="w3-card ion-no-padding-horizontal rowContent ">
+    <ion-list class="ion-no-padding" *ngFor="let item of docList;index as i">
+      <ion-item-sliding class="ion-no-padding">
+        <ion-item>
+          <ion-row class="w3-center">
+            <ion-col>
+              {{i+1}}
+            </ion-col>
+            <ion-col>
+              {{item.doc_name}}
+            </ion-col>
+            <ion-col>
+              {{item.doc_number}}
+            </ion-col>
+          </ion-row>
+
+        </ion-item>
+        <ion-item-options>
+          <ion-item-option color="danger">
+            <ion-icon name="image" class="w3-xlarge" (click)="uploadDoc(item)"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="danger">
+            <ion-icon name="create" class="w3-xlarge" (click)="updateDet(item._id)"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="danger">
+            <ion-icon name="trash" class="w3-xlarge" (click)="deleteDet(item._id)"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="return-left" color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center color="success" class="w3-large">
+      CURD Operation with Node
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-no-padding" *ngFor="let item of items">
+    <ion-item-sliding>
+      <ion-item>
+        <div class="w3-container">
+          <h1 class="w3-large primaryclr">
+            {{item.firstname}} {{item.lastname}}
+          </h1>
+          <div class="secondaryclr">
+            <ion-icon name="mail"></ion-icon><span class="additionalInfo">{{item.emailid}}</span>
+          </div>
+          <div class="secondaryclr">
+            <ion-icon name="call"></ion-icon><span class="additionalInfo">{{item.phoneno}}</span>
+          </div>
+
+        </div>
+
+
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger">
+          <ion-icon name="image" class="w3-xlarge" (click)="uploadDoc(item._id)"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon name="create" class="w3-xlarge" (click)="updateDet(item._id)"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon name="trash" class="w3-xlarge" (click)="deleteDet(item._id)"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="primary">
+    <ion-fab-button (click)="updateOrSave()">
+      <!-- <ion-icon src="../assets/imgs/edit.svg" color="success"></ion-icon> -->
+      <ion-icon name="checkmark" color="success"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

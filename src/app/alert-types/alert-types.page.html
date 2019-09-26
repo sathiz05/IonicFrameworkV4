@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="return-left" color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center color="success">
+      Alert Types
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item (click)="basicAlert()">
+      <ion-label>
+        Basic Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="MultipleButtonAlert()">
+      <ion-label>
+        Multiple Button Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="confirmAlert()">
+      <ion-label>
+        Confirm Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="presentAlertPrompt()">
+      <ion-label>
+        Custom Present Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="customRadioAlert()">
+      <ion-label>
+        Custom Radio Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="customCheckBoxAlert()">
+      <ion-label>
+        Custom Checkbox Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="dynamicRadioAlert()">
+      <ion-label>
+        Dynamic Radio Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+    <ion-item (click)="dynamicCheckBoxAlert()">
+      <ion-label>
+        Dynamic Checkbox Alert
+      </ion-label>
+      <ion-icon name="arrow-round-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

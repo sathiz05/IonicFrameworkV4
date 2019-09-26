@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>horizondalScroll</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Horizondal scroll using content -->
+  <h3>Horizondal scroll with content</h3>
+  <div class="scrolling-wrapper">
+    <ion-card class="card" *ngFor="let item of items">
+      <ion-card-content>
+        <img [src]="item.url" />
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <h3>Horizondal scroll with slide</h3>
+  <div *ngFor="let i of data">
+    <ion-row>
+      <ion-col>
+        {{i.category}}
+      </ion-col>
+    </ion-row>
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let cat of i.products">
+
+        <ion-card>
+          <img src="https://www.gstatic.com/webp/gallery/1.jpg" />
+          <!-- <div class="card-title">{{cat.name}}</div> -->
+          <ion-card-title>{{cat.name}}</ion-card-title>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+
+  <h3>Horizondal scroll using div</h3>
+  <div class="box" #hzScroll>
+    <div class="card-a"></div>
+    <div class="card-b"></div>
+    <div class="card-c"></div>
+    <div class="card-d"></div>
+    <div class="card-e"></div>
+    <div class="card-f"></div>
+    <div class="card-g"></div>
+    <div class="card-h"></div>
+    <div class="card-i"></div>
+  </div>
+
+  <!-- <h3>Horizontal Infinite Scroll</h3>
+  <div scrollX="true" style="height: 300px;background-color:red;">
+    <ion-row *ngFor="let i of data">
+      <ion-list *ngFor="let item of i.products">
+        <ion-col>
+          <ion-card>
+            <img src="https://www.gstatic.com/webp/gallery/1.jpg" />
+            <ion-card-title>{{item.name}}</ion-card-title>
+          </ion-card>
+        </ion-col>
+      </ion-list>
+    </ion-row>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div> -->
+  <h3>Horizontaol scroll with div instead of ion-scroll</h3>
+  <!-- <ion-slides [options]="sliderConfig" ionSlideReachEnd ="loadMore($event)">
+    <ion-slide *ngFor="let cat of products">
+
+      <ion-card>
+        <img src="https://www.gstatic.com/webp/gallery/1.jpg" />
+        <ion-card-title>{{cat.name}}</ion-card-title>
+      </ion-card>
+    </ion-slide>
+  </ion-slides> -->
+  <ion-list class="infinite" >
+      <ion-item *ngFor="let i of itemsI">{{i}}</ion-item>
+    </ion-list>
+   
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <ion-spinner name="crescent" *ngIf="isShown"></ion-spinner>
+
+</ion-content>
